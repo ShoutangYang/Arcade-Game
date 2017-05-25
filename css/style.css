@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+}
+#timed{
+    position: fixed;
+    float: right;
+    display: inline-flex;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #6ca0e8;
+}
