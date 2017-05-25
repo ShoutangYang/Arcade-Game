@@ -17,7 +17,7 @@ Enemy.prototype.update = function(dt) {
    this.x+=dt*150;
    if(this.x>=505)
        this.x=Math.floor( Math.random()*(-400));
-    console.log('enemy: x->'+this.x+' y->'+this.y);
+    //console.log('enemy: x->'+this.x+' y->'+this.y);
 };
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
@@ -34,7 +34,7 @@ var Player =function (x,y) {
 Player.prototype=new Enemy();
 Player.prototype.constructor=Player;
 Player.prototype.update=function () {
-    console.log(' player x-.'+this.x+' y->'+this.y);
+   // console.log(' player x-.'+this.x+' y->'+this.y);
 }
 
 

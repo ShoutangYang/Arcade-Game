@@ -45,7 +45,7 @@ var Engine = (function(global) {
          */
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
-            console.log('dt->'+dt);
+           // console.log('dt->'+dt);
         /* 调用我们的 update / render 函数， 传递事件间隙给 update 函数因为这样
          * 可以使动画更加顺畅。
          */
