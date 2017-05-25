@@ -29,11 +29,13 @@
 * 外部引入脚本文件；
 * 注意加载js文件的顺序
 
-```
-graph LR
-A(resources.js)-->B(app.js)
-B-->C(engine.js)
-```
 
+## 项目思路
+- 根据Enemy 类，创建 player子类；
+- 实例化 1个player 和 3个enemy；
+- 重写player的updata方法，并实现4个方向键控制player的动作；
+- 避免player超出边界
+- 根据enemies的x和y的值同player的x和y值做比较，判断是否相撞；
+- 实现计时功能
 
 
