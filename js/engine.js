@@ -30,7 +30,7 @@ var Engine = (function(global) {
 
     var myTimed=document.createElement('p');
     myTimed.innerHTML='this is timed';
-    myTimed.setAttribute('id','timed')
+    myTimed.setAttribute('id','timed');
     doc.body.appendChild(myTimed);
 
     //计时
@@ -69,7 +69,7 @@ var Engine = (function(global) {
      */
     function init() {
         reset();
-
+        //document.getElementById("gameOver").style.display='none';
         lastTime = Date.now();
         main();
     }
@@ -91,14 +91,19 @@ var Engine = (function(global) {
         var result=false;
 
         allEnemies.forEach(function (enemy) {
-           result=result||(-60<(player.x- enemy.x)&&(player.x- enemy.x)<60)&&(-60<(player.y-enemy.y)&&(player.y-enemy.y)<60)
-         //   console.log('x-player.x->'+(player.x-enemy.x)+'y-player.y->'+(player.y-enemy.y));
+           result=result||(((Math.abs(player.x- enemy.x))<10)&&((Math.abs((player.y-enemy.y))<10)));
+           if (result==true)
+            console.log('enemy x:'+ enemy.x+'eney y:'+enemy.y+' player x:'+player.x+' player y:'+player.y);
         })
         console.log('result->'+result);
         if(result==true){
-
+            document.getElementById("gameOver").style.display='block';
             reset();
-
+        }else{
+            if(player.y<50){
+                document.getElementById('gameWin').style.display='block';
+                reset();
+            }
         }
 
     }

@@ -14,9 +14,10 @@ Enemy.prototype.update = function(dt) {
     // 你应该给每一次的移动都乘以 dt 参数，以此来保证游戏在所有的电脑上
     // 都是以同样的速度运行的
    // this.x=d*t*this.x;
-   this.x+=dt*150;
+
+   this.x+=dt*(Math.random()*300);
    if(this.x>=505)
-       this.x=Math.floor( Math.random()*(-400));
+       this.x=Math.floor( Math.random()*(-500));
     //console.log('enemy: x->'+this.x+' y->'+this.y);
 };
 
@@ -31,7 +32,7 @@ var Player =function (x,y) {
     Enemy.call(this,x,y);
     this.sprite='images/char-boy.png'
 }
-Player.prototype=new Enemy();
+Player.prototype=Object.create(Enemy.prototype);
 Player.prototype.constructor=Player;
 Player.prototype.update=function () {
    // console.log(' player x-.'+this.x+' y->'+this.y);
@@ -54,8 +55,8 @@ Player.prototype.handleInput=function (value) {
             this.y-=83;
            if(this.y>405)
                 this.y=404;
-            if(this.y<72)
-                this.y=72;
+            if(this.y<0)
+                this.y=-10;
             break;
 
         case 'right':
@@ -70,7 +71,7 @@ Player.prototype.handleInput=function (value) {
             if(this.y>404)
                 this.y=404;
             if(this.y<0)
-                this.y=0;
+                this.y=-10;
             break;
         default :
     }
@@ -82,9 +83,9 @@ var player=new Player(0,404);
 //yanconsole.log(player.y);
 //console.log("x->"+player.x+"y->:"+player.y);
 var allEnemies=[];
-allEnemies[0] = new Enemy(-100,60);
-allEnemies[1]=new Enemy( -300,150);
-allEnemies[2]=new Enemy(0,230);
+allEnemies[0] = new Enemy(-166,72);
+allEnemies[1]=new Enemy( -300,155);
+allEnemies[2]=new Enemy(0,238);
 
 // 这段代码监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Play.handleInput()
 // 方法里面。你不需要再更改这段代码了。
@@ -98,3 +99,12 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+window.onload=function () {
+    document.getElementById('playAgain').onclick=function () {
+        document.getElementById('gameOver').style.display='none';
+    };
+    document.getElementById('win_playAgain').onclick=function () {
+        document.getElementById('gameWin').style.display='none';
+    };
+}
+

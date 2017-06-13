@@ -8,3 +8,62 @@ body {
     font-family: "Trebuchet MS", sans-serif;
     color: #6ca0e8;
 }
+
+/* Button */
+.button {
+    border-radius: 3px;
+    display: inline-block;
+    padding: 6px 40px;
+    margin: 65px;
+    background: #68d44f;
+    font-family: ArcadeClassic;
+    color: #fff;
+    font-size: 29px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px green;
+}
+
+.button:hover {
+    opacity: 0.95;
+}
+
+
+/* Overlay */
+.overlay {
+    background: #202020;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    z-index: 99999;
+}
+.overlay > .content {
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Game Over Screen */
+.game-over > .content {
+    max-width: 800px;
+    margin-bottom: 0;
+    padding: 12% 10%;
+}
+
+.game-over .heading {
+    font-size: 100px;
+    margin-bottom: 0;
+}
+
+
+
+.game-over img {
+    position: absolute;
+    top: 140px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
