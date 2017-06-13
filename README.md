@@ -9,8 +9,8 @@
 - [x] enemy横穿屏幕
 - [x] player撞enemy后，player回到原点
 - [x] 计时功能
-- [x] 玩家获胜后，出现动画
-- [x] 玩家撞到enemyh后，出现动画
+- [x] 玩家获胜后，出现提示动画
+- [x] 玩家撞到enemy后，出现提示动画
 ## 代码要求
 - [x] player继承Enemy
 - [x] 重写父类方法
